@@ -8,6 +8,14 @@
     "build"
   ],
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "target": "es5",
+    "module": "commonjs",
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
@@ -23,9 +31,7 @@
       ],
       "Database/*": [
         "./database/*"
-      ],
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true
+      ]
     },
     "types": [
       "@adonisjs/core",
