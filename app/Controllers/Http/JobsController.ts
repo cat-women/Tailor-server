@@ -1,7 +1,5 @@
-import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import { schema, rules } from "@ioc:Adonis/Core/Validator";
 import Application from "@ioc:Adonis/Core/Application";
-import { use } from "@adonisjs/core";
 import Database from "@ioc:Adonis/Lucid/Database";
 
 import Job from "App/Models/Job";
@@ -9,7 +7,7 @@ import JobImage from "App/Models/JobImage";
 
 export default class JobsController {
   // Create
-  public async add({ request, response }, HttpContextContract) {
+  public async add({ request, response }) {
     const data = request.body();
     // schema
     const jobSchema = schema.create({
@@ -37,7 +35,7 @@ export default class JobsController {
         "{{ field }} must be at least {{ options.minLength }} characters long",
       maxLength:
         "{{ field }} cannot be longer than {{ options.maxLength }} characters long",
-      "*": (field, rule, arrayExpressionPointer, options) => {
+      "*": (field, rule, options) => {
         return `${field} failed ${rule} validation`;
       }
     };
