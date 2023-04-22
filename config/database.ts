@@ -33,6 +33,8 @@ const databaseConfig: DatabaseConfig = {
     | npm i mysql2
     |
     */
+
+    /**
     mysql: {
       client: "mysql2",
       connection: {
@@ -48,8 +50,7 @@ const databaseConfig: DatabaseConfig = {
       healthCheck: false,
       debug: false
     }
-
-    /**
+*/
     pg: {
       client: "pg",
       connection: {
@@ -65,7 +66,6 @@ const databaseConfig: DatabaseConfig = {
       healthCheck: false,
       debug: false
     }
-    */
   }
 };
 

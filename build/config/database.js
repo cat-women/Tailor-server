@@ -5,23 +5,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Env_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Env"));
 var databaseConfig = {
-    connection: Env_1.default.get('DB_CONNECTION'),
+    connection: Env_1.default.get("DB_CONNECTION"),
     connections: {
         mysql: {
-            client: 'mysql2',
+            client: "mysql2",
             connection: {
-                host: Env_1.default.get('MYSQL_HOST'),
-                port: Env_1.default.get('MYSQL_PORT'),
-                user: Env_1.default.get('MYSQL_USER'),
-                password: Env_1.default.get('MYSQL_PASSWORD', ''),
-                database: Env_1.default.get('MYSQL_DB_NAME'),
+                host: Env_1.default.get("MYSQL_HOST"),
+                port: Env_1.default.get("MYSQL_PORT"),
+                user: Env_1.default.get("MYSQL_USER"),
+                password: Env_1.default.get("MYSQL_PASSWORD", ""),
+                database: Env_1.default.get("MYSQL_DB_NAME")
             },
             migrations: {
-                naturalSort: true,
+                naturalSort: true
             },
             healthCheck: false,
-            debug: false,
-        },
+            debug: false
+        }
     }
 };
 exports.default = databaseConfig;
